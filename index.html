@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grange Accountancy</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js" defer></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("Fn4QBvozUTlPQG-hA");
+   })();
+</script>
+  </head>
+  <body>
+    <section id="landing-page">
+      <nav>
+        <h1 class="logo">Grange Accountancy</h1>
+        <ul class="nav__link--list">
+          <li class="nav__link">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect"
+              >Home</a
+            >
+          </li>
+          <li class="nav__link">
+            <a
+              href="#services"
+              class="nav__link--anchor link__hover-effect"
+              >About us</a
+            >
+          </li>
+          <li class="nav__link">
+            <a
+              href="#services"
+              class="nav__link--anchor link__hover-effect"
+              >Services</a
+            >
+          </li>
+          <li class="nav__link" onclick="toggleModal()">
+            <button class="contact__button click">
+              <a
+                href="#"
+                class="nav__link--anchor"
+                >Contact us</a
+              >
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div class="about__background">
+        <div class="about__background--overlay">
+          <header class="about">
+            <div class="about__content">
+              <h1 class="title">Grange Accountancy</h1>
+              <h1 class="break">______________________________</h1>
+              <p class="para">
+                We are an accountancy firm that offers all accountancy services to small and medium sized businesses. We offer an efficient and friendly service at reasonable prices.
+              </p>
+              <button class="about__button click">
+                <a href="#" class="about__link click" onclick="toggleModal()">Contact us </a>
+              </button>
+            </div>
+          </header>
+          <button class="mail__button click" onclick="toggleModal()">
+            <i class="fa fa-envelope-square" aria-hidden="true"></i>
+          </button>
+          <a href="#services" class="scroll">
+            <div class="scroll__icon click"></div>
+          </a>
+        </div>
+      </div>
+      <div class="modal">
+        <div class="modal__half modal__about">
+            <h3 class="modal__title modal__title--about about__title--decoration">Get in contact.</h3>
+            <h3 class="modal__sub-title modal__sub-title--about">Steve Axford Registered Accountant</h3>
+            <h4 class="modal__sub-title modal__sub-title--about">Available 9-5 Monday - Friday</h4>
+            <h4 class="modal__sub-title modal__sub-title--about">Phone Number: 07906541730</h4>
+            <h4 class="modal__sub-title modal__sub-title--about">Email Address: grangeaccountancy@gmx.co.uk</h4>
+            <p class="modal__para">Use either of these methods to get in contact if you have any queries. We are happy to help!</p>
+        </div>
+        <div class="modal__half modal__contact">
+          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+          <h3 class="modal__title modal__title--contact">
+            Give us an email!
+          </h3>
+          <h3 class="modal__sub-title--contact">
+           
+          </h3>
+          <form id="contact__form" onsubmit="contact(event)">
+            <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input class="input" name="user_name" type="text" required></input>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Email</label>
+              <input class="input" name="user_email" type="email" required></input>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Message</label>
+              <textarea class="input" name="message" type="text" required></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">
+              Send it our way
+            </button>
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for the message! We look forward to speaking with you soon.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="services">
+      <div class="row">
+        <div class="services__img--container">
+          <figure class="container__img--figure">
+            <div class="container__img--background-one">
+              <div class="container__img--overlay"></div>
+            </div>
+          </figure>
+        </div>
+        <div class="services__text--container">
+          <div class="container__content">
+            <h1 class="title">About us:</h1>
+            <h1 class="break">___________________</h1>
+            <p class="para offer__para">
+              We have been in business for over 30 years and currently have over 100 clients in and around the Newcastle Upon Tyne area.
+            </p>
+            <button class="about__button offer__button click" onclick="toggleModal()">
+              <a href="#" class="about__link">Contact us </a>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="services__text--container">
+          <div class="container__content">
+            <h1 class="title">What we Offer</h1>
+            <h1 class="break">___________________</h1>
+            <p class="para offer__para">
+            We offer Bookkeeping services and do all aspect of accounting including VAT, Payroll, Pensions and Tax Returns
+            </p>
+            <button class="about__button offer__button click" onclick="toggleModal()">
+              <a href="#" class="about__link">Contact us</a>
+            </button>
+          </div>
+        </div>
+        <div class="services__img--container">
+          <figure class="container__img--figure">
+            <div class="container__img--background-two">
+              <div class="container__img--overlay"></div>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer__container">
+        <div class="footer__row">
+          <h1 class="footer__title">Grange Accountancy</h1>
+          <div class="footer__social--list">
+            <a
+              href="#landing-page"
+              class="footer__social--link link__hover-effect"
+              >Home</a
+            >
+            <a
+              href="#services"
+              class="footer__social--link link__hover-effect"
+              >About us</a
+            >
+            <a
+              href="#services"
+              class="footer__social--link link__hover-effect"
+              >Services</a
+            >
+            <a
+              href="#"
+              class="footer__social--link link__hover-effect" onclick="toggleModal()"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
